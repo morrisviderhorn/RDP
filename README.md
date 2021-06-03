@@ -18,3 +18,17 @@ The PowerShell Script:
 4.	Saved the script as RegisterDNS.ps1
 5.	Created a basic task in the task schedular that each time the machine start it runs the script.
 
+
+To register public dynamic IP address with route 53 using Amazon EC2 user data:
+
+1. Login to the running ec2 instance -> Open PowerShell command window and exceute the script:
+
+C:\ProgramData\Amazon\EC2-Windows\Launch\Scripts\InitializeInstance.ps1 –Schedule
+
+2. Stop the ec2 windows instance -> then choose, Actions, Instance Settings, Edit User Data.
+3. Enter the following
+
+<powershell>
+Enter the registerDNS.ps1 code
+</powershell>
+<persist>true</persist>
